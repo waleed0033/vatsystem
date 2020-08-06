@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>VAT System</title>
+{% endblock %}
+
+
+{% block body %}
+<p><h5>Custmoer</h5></p>
+
+<div>
+
+  {% for order in Customer.orders %}
+
+    <div class="card" style="width: 45rem;">
+    
+      <ul class="list-group list-group-flush">
+      
+        <li class="list-group-item">Order ID : {{order.id}}</li>
+      
+        <li class="list-group-item">Phone : <a href="tel:{{Customer.phone_number}}">{{Customer.phone_number}}</a></li>
+      
+        <li class="list-group-item">Email : <a href="mailto:{{Customer.email}}">{{Customer.email}}</a></li>
+      
+        <li class="list-group-item">Address : {{Customer.address}}</li>
+      
+        <li class="list-group-item">VAT ID : {{Customer.vat_id}}</li>
+
+        <li class="list-group-item"><a href="/customer/{{Customer.id}}">Show all order from this Customer</a></li>
+
+      </ul>
+    </div>
+  
+  <br>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
