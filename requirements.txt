@@ -5,5 +5,5 @@ certifi
 chardet
 gunicorn
 requests
-mysql-connect-python
+PyMySQL
 flask_sqlalchemy
